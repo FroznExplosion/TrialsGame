@@ -14,6 +14,65 @@ A 3D dirt bike trials game inspired by Trials Evolution with a Draw Rider-style 
 
 ---
 
+## Quick Start Guide
+
+### Current Project Status
+
+**✅ Completed:**
+- Project structure and folder organization
+- All autoload singletons (GameManager, InputManager, LevelManager, SettingsManager)
+- Core physics scripts (physics constants, spring-damper)
+- Utility classes (curve, mesh, math utilities)
+- Data structures (LevelData, BikeStats, UserProfile)
+- Input system configuration (keyboard, gamepad, touch)
+- Main scene with test ground
+- Jolt Physics configuration
+
+**🔨 Next Steps (Phase 1 - Bike Physics):**
+1. Create bike scene structure
+2. Implement wheel physics
+3. Implement suspension system
+4. Create bike controller
+5. Test on the included test ground
+
+### Running the Project
+
+1. Open Godot 4.5 (or later)
+2. Import project by selecting `project.godot`
+3. Press F5 to run (you'll see an empty test scene with a ground plane)
+
+**Note:** Jolt Physics is configured in `project.godot`. If Godot 4.4+ is installed, it's built-in. For earlier versions, you may need to install the Jolt Physics addon.
+
+### Key Files Overview
+
+**Autoloads (Always accessible via their name):**
+- `GameManager` - Game state, level flow, scoring
+- `InputManager` - Cross-platform input (call `InputManager.get_throttle()`, etc.)
+- `LevelManager` - Level loading/saving
+- `SettingsManager` - User preferences
+
+**Utilities:**
+- `scripts/physics/physics_constants.gd` - Tweak all physics values here
+- `scripts/physics/spring_damper.gd` - Spring-damper calculations
+- `scripts/utils/curve_utils.gd` - Bezier curves, smoothing
+- `scripts/utils/mesh_utils.gd` - Runtime mesh generation
+- `scripts/utils/math_utils.gd` - Math helpers
+
+**Data Classes:**
+- `scripts/data/level_data.gd` - Level save/load format
+- `scripts/data/bike_stats.gd` - Bike configurations
+- `scripts/data/user_profile.gd` - Player progress
+
+### Quick Test Checklist
+
+Before starting Phase 1, verify:
+- [ ] Project opens without errors in Godot 4.5
+- [ ] Main scene runs (F5) - you should see a test ground
+- [ ] No errors in Output console
+- [ ] All autoload scripts are registered (check Project Settings → Autoload)
+
+---
+
 ## Technology Stack
 
 ### Engine & Physics
